@@ -55,14 +55,19 @@ const styles = StyleSheet.create({
     container: {
         padding: 50,
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center'
     },
     titleDisplay: {
+        paddingBottom: 27,
         fontWeight: '600',
+        fontFamily: 'Whitney',
+        fontSize: 20,
+        color: '#2c2f33',
     },
     data: {
         fontStyle: 'italic',
+        fontFamily: 'Whitney',
+        color: '#2c2f33',
     }
 });
