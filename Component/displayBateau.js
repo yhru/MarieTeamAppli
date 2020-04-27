@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import AddBateau from '../dataAdd/addBateau'
 
 export default class DisplayBateau extends React.Component {
 
@@ -45,6 +46,7 @@ export default class DisplayBateau extends React.Component {
           {
             this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>{val}</Text></View>)
           }
+          <AddBateau/>
         </View>
       );
     }
@@ -57,20 +59,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-    // backgroundColor: '#2c2f33',
   },
   titleDisplay: {
     paddingBottom: 27,
     fontWeight: '600',
-    // color: '#F8F8FF',
     fontFamily: 'Whitney',
     fontSize: 20,
-    color: '#2c2f33',
   },
   data: {
     fontStyle: 'italic',
-    // color: '#F8F8FF',
     fontFamily: 'Whitney',
-    color: '#2c2f33',
   }
 });
