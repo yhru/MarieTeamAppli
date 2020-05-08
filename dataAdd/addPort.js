@@ -2,22 +2,23 @@ import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Button, Input } from 'react-native-elements';
 
-export default class AddBateau extends Component {
+export default class AddPort extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            nomBateau: ''
+            nomPort: ''
         }
     }
 
-    bateauRegister = () => {
-        const { nomBateau } = this.state;
+    portRegister = () => {
+        // alert('ok');
+        const { nomPort } = this.state;
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        var raw = JSON.stringify({ "nom": nomBateau });
+        var raw = JSON.stringify({ "nom": nomPort });
 
         var requestOptions = {
             method: 'POST',
@@ -26,15 +27,14 @@ export default class AddBateau extends Component {
         };
 
         // Text de confirmation + reload
-        if (nomBateau != ''){
-            alert(nomBateau + ' a bien été ajouté.');
+        if (nomPort != ''){
+            alert(nomPort + ' a bien été ajouté.');
             window.location.reload(false);
         } else {
             alert('Entrez une valeur correcte dans l\'input');
         }
-        
 
-        fetch("http://localhost:3000/bateau", requestOptions)
+        fetch("http://localhost:3000/port", requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
@@ -44,12 +44,11 @@ export default class AddBateau extends Component {
         return (
             <View style={styles.container}>
                 <Input
-                    placeholder="Entrez le nom du bateau"
-                    
+                    placeholder="Entrez le nom du port"
                     style={{ textAlign: "center" }}
-                    onChangeText={nomBateau => this.setState({ nomBateau })}
+                    onChangeText={nomPort => this.setState({ nomPort })}
                 />
-                <Button type="outline" style={{}} onPress={this.bateauRegister} title="Ajouter le nouveau bateau" />
+                <Button type="outline" style={{}} onPress={this.portRegister} title="Ajouter le nouveau port" />
             </View>
         )
     }

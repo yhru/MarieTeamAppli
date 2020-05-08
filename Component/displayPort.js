@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import AddPort  from '../dataAdd/addPort';
 
 export default class DisplayPort extends React.Component {
 
@@ -43,8 +44,9 @@ export default class DisplayPort extends React.Component {
                 <View style={styles.container}>
                     <Text style={styles.titleDisplay}>Liste des ports : </Text>
                     {
-                        this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>{val}</Text></View>)
+                        this.state.dataSource.map((val, key) => <View key={key}><Text style={{paddingLeft: "37%"}}>{val}</Text></View>)
                     }
+                <AddPort/>
                 </View>
             );
         }
@@ -53,21 +55,14 @@ export default class DisplayPort extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 50,
+        justifyContent: 'center',
+        alignSelf: "center",
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
     },
     titleDisplay: {
         paddingBottom: 27,
-        fontWeight: '600',
-        fontFamily: 'Whitney',
+        fontWeight: '400',
         fontSize: 20,
-        color: '#2c2f33',
+        alignSelf: "center"
     },
-    data: {
-        fontStyle: 'italic',
-        fontFamily: 'Whitney',
-        color: '#2c2f33',
-    }
 });

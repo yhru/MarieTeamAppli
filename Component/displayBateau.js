@@ -44,7 +44,7 @@ export default class DisplayBateau extends React.Component {
         <View style={styles.container}>
           <Text style={styles.titleDisplay}>Nom des bateaux : </Text>
           {
-            this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>{val}</Text></View>)
+            this.state.dataSource.map((val, key) => <View key={key}><Text style={{paddingLeft: "37%"}}>{val}</Text></View>)
           }
           <AddBateau/>
         </View>
@@ -55,19 +55,14 @@ export default class DisplayBateau extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 50,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignSelf: "center",
     flex: 1,
   },
   titleDisplay: {
     paddingBottom: 27,
-    fontWeight: '600',
-    fontFamily: 'Whitney',
+    fontWeight: '400',
     fontSize: 20,
+    alignSelf: "center"
   },
-  data: {
-    fontStyle: 'italic',
-    fontFamily: 'Whitney',
-  }
 });

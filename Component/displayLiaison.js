@@ -17,11 +17,16 @@ export default class DisplayLiaison extends React.Component {
       .then((responseJson) => {
         let temp = []
         responseJson.forEach(element => {
-          temp.push(element.code)
+          temp.push(element.port_depart_id)
+        });
+        let temp2 = []
+        responseJson.forEach(element => {
+          temp2.push(element.port_arrivee_id)
         });
         this.setState({
           isLoading: false,
-          dataSource: temp
+          dataSource: temp,
+          dataSource2: temp2
         })
       })
       .catch(error => {
@@ -41,10 +46,14 @@ export default class DisplayLiaison extends React.Component {
 
       return (
         <View style={styles.container}>
-          <Text style={styles.titleDisplay}>ID des liaisons : </Text>
-          {
-            this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>{val}</Text></View>)
-          }
+            <Text style={styles.titleDisplay}>ID des liaisons : </Text>
+            {
+              this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>Port de départ : {val}</Text></View>)
+            }
+            <Text style={styles.titleDisplay1}>ID des liaisons 1: </Text>
+            {
+              this.state.dataSource2.map((val2, key2) => <View key2={key2}><Text style={styles.data}>Port d'arrivée : {val2}</Text></View>)
+            }
         </View>
       );
     }
@@ -53,22 +62,21 @@ export default class DisplayLiaison extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    // backgroundColor: '#2c2f33',
+    justifyContent: "center",
+    alignItems: "center",
   },
   titleDisplay: {
     paddingBottom: 27,
     fontWeight: '600',
-    // color: '#F8F8FF',
-    fontFamily: 'Whitney',
+    fontSize: 20,
+    flexDirection: "row"
+  },
+  titleDisplay1: {
+    paddingBottom: 27,
+    fontWeight: '600',
     fontSize: 20,
   },
   data: {
-    fontStyle: 'italic',
-    // color: '#F8F8FF',
-    fontFamily: 'Whitney',
+    flexDirection: "column",
   }
 });
