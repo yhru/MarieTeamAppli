@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import DisplayBateau from '../Component/displayBateau'
 import DisplayPort from '../Component/displayPort'
 import DisplayLiaison from '../Component/displayLiaison'
+import DisplayNote from '../Component/displayNote'
 
 
 const TabNavigator = createMaterialBottomTabNavigator(
@@ -21,8 +22,8 @@ const TabNavigator = createMaterialBottomTabNavigator(
                     </View>
                 ),
                 activeColor: '#ffffff',
-                inactiveColor: '#3e2465',
-                barStyle: { backgroundColor: '#694fad' }
+                inactiveColor: '#858991',
+                barStyle: { backgroundColor: '#2C2F33' }
                 
             }
         },
@@ -36,32 +37,46 @@ const TabNavigator = createMaterialBottomTabNavigator(
                     </View>
                 ),
                 activeColor: '#ffffff',
-                inactiveColor: '#bda1f7',
-                barStyle: { backgroundColor: '#6948f4' }
+                inactiveColor: '#858991',
+                barStyle: { backgroundColor: '#2C2F33' }
             }
             
         },
         DisplayLiaison: {
             screen: DisplayLiaison,
             navigationOptions: {
-                tabBarLabel: "Ports",
+                tabBarLabel: "Liaisons",
                 tabBarIcon: ({ tintColor }) => (
                     <View>
                         <Icon style={[{ color: tintColor }]} size={20} name='ios-link' />
                     </View>
                 ),
                 activeColor: '#ffffff',
-                inactiveColor: '#bda1f7',
-                barStyle: { backgroundColor: '#6948f4' }
+                inactiveColor: '#858991',
+                barStyle: { backgroundColor: '#2C2F33' }
+            }
+        },
+        DisplayNote: {
+            screen: DisplayNote,
+            navigationOptions: {
+                tabBarLabel: "Note",
+                tabBarIcon: ({ tintColor }) => (
+                    <View>
+                        <Icon style={[{ color: tintColor }]} size={20} name='md-create' />
+                    </View>
+                ),
+                activeColor: '#ffffff',
+                inactiveColor: '#858991',
+                barStyle: { backgroundColor: '#2C2F33' }
             }
         }
     },
     {
         //choisir la page d'accueil plus tard ici
-        initialRouteName: 'DisplayBateau',
+        initialRouteName: 'DisplayNote',
         activeColor: '#ffffff',
-        inactiveColor: '#ebaabd',
-        barStyle: { backgroundColor: '#d13560' }
+        inactiveColor: '#858991',
+        barStyle: { backgroundColor: '#2C2F33' }
     }
 );
 

@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: "center",
     flex: 1,
+    
   },
   titleDisplay: {
     paddingBottom: 27,

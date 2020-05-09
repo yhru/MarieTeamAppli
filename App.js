@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textAlign: 'center',
     padding: 20,
-    // fontFamily: 'Whitney', <-- discord font
+    backgroundColor: "#2C2F33",
+    color: "#ffffff"
   },
   data: {
     

@@ -50,7 +50,7 @@ export default class DisplayLiaison extends React.Component {
             {
               this.state.dataSource.map((val, key) => <View key={key}><Text style={styles.data}>Port de départ : {val}</Text></View>)
             }
-            <Text style={styles.titleDisplay1}>ID des liaisons 1: </Text>
+            <Text style={styles.titleDisplay}>ID des liaisons 1: </Text>
             {
               this.state.dataSource2.map((val2, key2) => <View key2={key2}><Text style={styles.data}>Port d'arrivée : {val2}</Text></View>)
             }
@@ -62,21 +62,15 @@ export default class DisplayLiaison extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignSelf: "center",
+    textAlign: "center",
+    flex: 1,
   },
   titleDisplay: {
-    paddingBottom: 27,
-    fontWeight: '600',
+    padding: 27,
+    fontWeight: '400',
     fontSize: 20,
-    flexDirection: "row"
+    alignSelf: "center"
   },
-  titleDisplay1: {
-    paddingBottom: 27,
-    fontWeight: '600',
-    fontSize: 20,
-  },
-  data: {
-    flexDirection: "column",
-  }
 });
