@@ -12,7 +12,7 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/material-bottom-tabs": "^5.1.10",
     "bootstrap": "^4.4.1",
-    "expo": "~37.0.3",
+    "expo": "~48.0.0",
     "react": "~16.9.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "~16.9.0",
